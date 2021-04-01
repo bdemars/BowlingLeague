@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Team>
+
+
+  
+@{
+    var headerOutput = "";
+
+    foreach (var x in Model)
+    {
+        if (x.TeamName == ViewBag.SelectedTeam)
+        {
+            headerOutput = x.TeamName;
+            break;
+        }
+        else
+        {
+            headerOutput = "All Players";
+        }
+    }
+
+    <h1>@headerOutput</h1>
+}
+
